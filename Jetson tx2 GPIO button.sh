@@ -10,18 +10,15 @@ cd gpio398/
 echo in > direction
 
 cat direction #check current direction
-sleep 1
-cat edge
-sleep 1
-cat value
 
 #loop that runs looking for a change in voltage on pin 398
 variable=$( cat value )
 while [ "$variable" -eq 0 ];do
 	variable=$(cat value)
 	if [ "$variable" -eq 1 ]; then
+		#put your script that the button activates here
 		echo $variable equals one
-		echo test succesfu
+		echo test succesful
 	fi	
 done
 
